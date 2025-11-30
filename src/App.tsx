@@ -1,63 +1,16 @@
-
-import "./App.css";
-import { Button } from "./components/ui/Button";
+import { Button } from "./components/Button";
+import { Card } from "./components/Card";
 import { PlusIcon } from "./icons/PlusIcon";
-import { ShareIcon } from "./icons/ShareIcon";
+import { Shareicon } from "./icons/ShareIcon";
 
 function App() {
   return (
-    <>
-      <Button
-        startIcon={<PlusIcon />}
-        size="lg"
-        variant={"primary"}
-        text="Share"
-        onClick={() => {}}
-        endIcon={<ShareIcon />}
-      />
-      <Button
-        startIcon={<PlusIcon/>}
-        size="lg"
-        variant={"secondary"}
-        text="Share"
-        onClick={() => {}}
-        endIcon={<ShareIcon />}
-      />
+    <div>
+      <Button variant="primary" text="Add content" startIcon={<PlusIcon/>}/>
+      <Button variant="secondary" text="Share brain" startIcon={<Shareicon/>}/>
 
-
-      <Button
-        startIcon={<PlusIcon />}
-        size="md"
-        variant={"primary"}
-        text="Share"
-        onClick={() => {}}
-        endIcon={<ShareIcon/>}
-      />
-      <Button
-        startIcon={<PlusIcon/>}
-        size="md"
-        variant={"secondary"}
-        text="Share"
-        onClick={() => {}}
-        endIcon={<ShareIcon/>}
-      />
-      <Button
-        startIcon={<PlusIcon />}
-        size="sm"
-        variant={"primary"}
-        text="Share"
-        onClick={() => {}}
-        endIcon={<ShareIcon/>}
-      />
-      <Button
-        startIcon={<PlusIcon />}
-        size="sm"
-        variant={"secondary"}
-        text="Share"
-        onClick={() => {}}
-        endIcon={<ShareIcon/>}
-      />
-    </>
+      <Card/>
+    </div>
   );
 }
 
