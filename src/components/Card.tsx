@@ -3,15 +3,16 @@ import { Shareicon } from "../icons/ShareIcon";
 interface CardProps {
   title: string;
   link: string;
-  type: "twitter" | "youtube";
+  type: any;
 }
-
 export function Card({ title, link, type }: CardProps) {
+  const normalizedType = type.toLowerCase();
+
   return (
     <div>
       <div
         className="p-4 bg-white rounded-md border-gray-200 
-        max-w-72 border min-h-48 min-w-72"
+        max-w-72 border min-h-48 min-w-72 "
       >
         <div className="flex justify-between ">
           <div className="flex items-center text-md">
@@ -31,8 +32,10 @@ export function Card({ title, link, type }: CardProps) {
             </div>
           </div>
         </div>
+
         <div className="pt-4">
-          {type === "youtube" && (
+          {/* YOUTUBE */}
+          {normalizedType === "youtube" && (
             <iframe
               className="w-full aspect-video rounded"
               src={`https://www.youtube.com/embed/${link
@@ -47,10 +50,12 @@ export function Card({ title, link, type }: CardProps) {
             ></iframe>
           )}
 
-          {type == "twitter"}
-          <blockquote className="twitter-tweet">
-            <a href={link.replace("x.com", "twitter.com")}></a>
-          </blockquote>
+          {/* TWITTER */}
+          {normalizedType === "twitter" && (
+            <blockquote className="twitter-tweet">
+              <a href={link.replace("x.com", "twitter.com")} />
+            </blockquote>
+          )}
         </div>
       </div>
     </div>
